@@ -1,0 +1,18 @@
+enum Allergens {
+  gluten,
+  crustaceans,
+  egg,
+  fish,
+  peanut,
+  soy,
+  dairy,
+  nuts,
+  celery,
+  mustard,
+  sesame,
+  mollusc,
+  lupine,
+  beans,
+  seafood,
+  mushroom,
+}

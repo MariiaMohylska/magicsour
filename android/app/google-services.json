@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "500614563374",
+    "firebase_url": "https://magicsour-5c971-default-rtdb.firebaseio.com",
+    "project_id": "magicsour-5c971",
+    "storage_bucket": "magicsour-5c971.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:500614563374:android:e08884a963f09cf07001bf",
+        "android_client_info": {
+          "package_name": "com.example.magicsour"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "500614563374-9iuucl6u1gbe76uo8lgsqeun4dfks6qu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.magicsour",
+            "certificate_hash": "1b6dc29bfe2e4f5cf6a6b00c0665389e01b63b60"
+          }
+        },
+        {
+          "client_id": "500614563374-r6t9g462ae3puq46f9i228v0jprcmdfi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUjqHqnOJoL7jNX-gC3sS8vtOQF9BvYZs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "500614563374-r6t9g462ae3puq46f9i228v0jprcmdfi.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "500614563374-4m4klsjmjafrpva591j7hc7jtvojmk3b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.magicSour"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
