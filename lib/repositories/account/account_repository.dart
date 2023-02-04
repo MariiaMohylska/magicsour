@@ -26,7 +26,7 @@ class AccountRepository {
   Future<ProfileModel?> getUserById(String id) async {
     final doc = await _firebaseFirestore.collection('users').doc(id).get();
     return doc.data() != null
-        ? ProfileModel.fromJson(doc.data()!, _recipeRepository.getIngredientMapFromList)
+        ? ProfileModel.fromJson(doc.data()!, _recipeRepository.ingredientList)
         : null;
   }
 

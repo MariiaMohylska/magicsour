@@ -6,19 +6,22 @@ import 'package:magicsour/utils/mappers/product_type_mapper.dart';
 
 class Ingredient {
   String name;
+  String id;
   ProductType type;
   Nutrition nutrition;
   Allergens? allergen;
 
   Ingredient({
     required this.name,
+    required this.id,
     required this.type,
     required this.nutrition,
     this.allergen,
   });
 
-  Ingredient.fromJson(Map<String, dynamic> snapshot)
+  Ingredient.fromJson(Map<String, dynamic> snapshot, String snapShotId)
       : name = snapshot['name'] ?? '',
+        id = snapShotId,
         type = ProductTypeMapper.productTypeFromString(snapshot['type'] ?? ''),
         nutrition = Nutrition.fromJson(snapshot['nutrition']),
         allergen = AllergensMapper.allergensFromString(snapshot['allergen'] ?? '');
