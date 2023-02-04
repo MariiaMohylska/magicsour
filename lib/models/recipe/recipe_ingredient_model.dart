@@ -33,6 +33,7 @@ class RecipeIngredientModel {
     return ingredientsMap[ingredientName] ??
         Ingredient(
             name: ingredientName,
+            id: '',
             type: ProductType.unknown,
             nutrition:
                 Nutrition(calories: 0, protein: 0, fat: 0, carbohydrates: 0));

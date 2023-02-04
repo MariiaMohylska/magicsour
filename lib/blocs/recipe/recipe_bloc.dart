@@ -63,8 +63,9 @@ class RecipeBloc extends Bloc<RecipeEvent, RecipeState> {
         .collection('ingredients')
         .get();
 
-    final ingredientsList =
-        collection.docs.map((doc) => Ingredient.fromJson(doc.data())).toList();
+    final ingredientsList = collection.docs
+        .map((doc) => Ingredient.fromJson(doc.data(), doc.id))
+        .toList();
 
     _recipeRepository.setIngredientMap = ingredientsList;
   }

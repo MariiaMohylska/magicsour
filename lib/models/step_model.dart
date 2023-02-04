@@ -41,6 +41,7 @@ class StepModel {
     return ingredients.map((ingredient) => ingredientsMap[ingredient] ??
         Ingredient(
             name: ingredient,
+            id: '',
             type: ProductType.unknown,
             nutrition:
             Nutrition(calories: 0, protein: 0, fat: 0, carbohydrates: 0))).toList();
