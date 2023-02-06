@@ -6,7 +6,8 @@ class RecipeTitleWithImage extends StatelessWidget {
   final String name;
   final String id;
 
-  const RecipeTitleWithImage({super.key, required this.image, required this.name, required this.id});
+  const RecipeTitleWithImage(
+      {super.key, required this.image, required this.name, required this.id});
 
   @override
   Widget build(BuildContext context) {
@@ -15,15 +16,13 @@ class RecipeTitleWithImage extends StatelessWidget {
       children: [
         SizedBox(
           width: MediaQuery.of(context).size.width,
-          child: Image.network(
-              image,
-              fit: BoxFit.cover),
+          child: Image.network(image, fit: BoxFit.cover),
         ),
         Container(
           height: 200,
           decoration: BoxDecoration(
             gradient: LinearGradient(colors: [
-              Colors.brown.shade800.withOpacity(0.9),
+              Colors.brown.shade900.withOpacity(0.9),
               Colors.brown.withOpacity(0.65),
               Colors.brown.shade200.withOpacity(0.05)
             ], begin: Alignment.bottomCenter, end: Alignment.topCenter),
@@ -40,16 +39,21 @@ class RecipeTitleWithImage extends StatelessWidget {
               child: Text(
                 name,
                 style: TextStyle(
-                  color: Colors.white.withOpacity(0.95),
+                  color: Colors.brown.shade100,
                   fontSize: 30,
                 ),
               ),
             ),
-            FavouriteButton(dishId: id),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 12.0),
+              child: FavouriteButton(
+                dishId: id,
+                color: Colors.brown.shade200,
+              ),
+            ),
           ],
         ),
       ],
     );
   }
-
 }
