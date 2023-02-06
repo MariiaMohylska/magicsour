@@ -101,5 +101,6 @@
   "plsLogIn": "Please, sign into your account",
   "selectAll": "Select all",
   "emptyShoppingList": "Empty shopping list",
-  "errorMessage": "Sorry, something went wrong :( \n Try to begin from home page"
+  "errorMessage": "Sorry, something went wrong :( \n Try to begin from home page",
+  "logOut": "Log out"
 }

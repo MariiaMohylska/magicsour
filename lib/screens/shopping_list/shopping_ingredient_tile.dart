@@ -34,15 +34,15 @@ class ShoppingIngredientTileState extends State<ShoppingIngredientTile> {
                     !widget.shoppingListItem.unavailable;
               });
             },
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            child: Wrap(
+              alignment: WrapAlignment.spaceBetween,
               children: [
                 Text(
                   widget.shoppingListItem.ingredient.ingredient.name,
                   style: _getTextStyle(),
                 ),
                 Text(
-                  '${widget.shoppingListItem.amount} ${MeasurementMapper.measurementToString(widget.shoppingListItem.measure)}',
+                  '\t${widget.shoppingListItem.amount} ${MeasurementMapper.measurementToString(widget.shoppingListItem.measure)}',
                   style: _getTextStyle(),
                 ),
               ],

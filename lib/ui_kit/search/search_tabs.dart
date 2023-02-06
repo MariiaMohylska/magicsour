@@ -17,19 +17,17 @@ class SearchTabs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 18),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           GestureDetector(
             onTap: searchOnPressed,
-            child: _tabButton(
-                context, S.instance!.search, !_isGenerating),
+            child: _tabButton(context, S.instance!.search, !_isGenerating),
           ),
           GestureDetector(
             onTap: generatingOnPressed,
-            child: _tabButton(
-                context, S.instance!.generate, _isGenerating),
+            child: _tabButton(context, S.instance!.generate, _isGenerating),
           )
         ],
       ),
@@ -39,8 +37,8 @@ class SearchTabs extends StatelessWidget {
   Widget _tabButton(BuildContext context, String title, bool selected) {
     return selected
         ? ColorfulContainer(
-            width: MediaQuery.of(context).size.width / 3,
-            padding: const EdgeInsets.all(6),
+            width: MediaQuery.of(context).size.width / 3 + 10,
+            padding: const EdgeInsets.symmetric(vertical: 8),
             borderRadius: 30.0,
             child: Text(
               title,
