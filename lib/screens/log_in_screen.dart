@@ -27,8 +27,9 @@ class LogInScreen extends StatelessWidget {
             style: const TextStyle(
                 fontSize: 18.0,
                 fontWeight: FontWeight.bold,
-            color: AppColors.brown),
+                color: AppColors.brown),
             softWrap: true,
+            textAlign: TextAlign.center,
           ),
           const SizedBox(height: 24),
           FrostedGlass(
@@ -38,9 +39,7 @@ class LogInScreen extends StatelessWidget {
             child: Center(
               child: Text(
                 S.instance!.googleAuth,
-                style: const TextStyle(
-                    fontSize: 18.0,
-                color: AppColors.brown),
+                style: const TextStyle(fontSize: 18.0, color: AppColors.brown),
               ),
             ),
           ),

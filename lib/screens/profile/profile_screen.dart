@@ -108,7 +108,7 @@ class ProfileScreenState extends State<ProfileScreen> {
             onPressed: () {},
           ),
           RowField(
-            title: 'Вийти',
+            title: S.instance!.logOut,
             onPressed: () {
               widget.accountBloc.add(const AccountEvent.logOut());
             },

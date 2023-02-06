@@ -9,7 +9,7 @@ class NutritionContainer extends StatelessWidget {
   final double height;
   final double width;
   final double titleFontSize;
-  final padding = const EdgeInsets.all(8.0);
+  final padding = const EdgeInsets.all(6.0);
   final borderRadius = 50.0;
 
   const NutritionContainer(

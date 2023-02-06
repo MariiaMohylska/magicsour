@@ -18,10 +18,13 @@ class TopBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FrostedGlass(
-      height: 100.0,
-      width: double.infinity,
       child: Padding(
-        padding: const EdgeInsets.only(right: 12.0, left: 12.0, bottom: 8),
+        padding: EdgeInsets.only(
+          right: 12.0,
+          left: 12.0,
+          top: MediaQuery.of(context).padding.top + 12,
+          bottom: 8,
+        ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.end,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

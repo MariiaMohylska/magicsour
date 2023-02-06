@@ -9,7 +9,11 @@ class RestrictedProductDialog extends StatefulWidget {
       restrictedProducts;
   final Function()? onTap;
 
-  const RestrictedProductDialog({super.key, required this.restrictedProducts, this.onTap});
+  const RestrictedProductDialog({
+    super.key,
+    required this.restrictedProducts,
+    this.onTap,
+  });
 
   @override
   State<RestrictedProductDialog> createState() =>
@@ -33,12 +37,15 @@ class RestrictedProductDialogState extends State<RestrictedProductDialog> {
         ),
       ),
       actions: [
-        GestureDetector(child: const Icon(Icons.done), onTap: () {
-          if(widget.onTap != null) {
-            widget.onTap!();
-          }
-          Navigator.of(context).pop();
-        },)
+        GestureDetector(
+          child: const Icon(Icons.done),
+          onTap: () {
+            if (widget.onTap != null) {
+              widget.onTap!();
+            }
+            Navigator.of(context).pop();
+          },
+        )
       ],
     );
   }
@@ -49,37 +56,36 @@ class RestrictedProductDialogState extends State<RestrictedProductDialog> {
     widget.restrictedProducts.forEach((key, value) {
       Widget typeList = Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(ProductTypeMapper.productTypeToString(key.model), style: const TextStyle(fontSize: 20),),
-              Checkbox(
-                  value: value.isAllSelected,
-                  onChanged: (isSelected) {
-                    setState(() {
-                      key.isSelected = isSelected ?? false;
-                      value.onSelectAllTapped(isSelected ?? false);
-                    });
-                  })
-            ],
-          ),
-          ...value.map((e) => Padding(
-                padding: const EdgeInsets.only(left: 24),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(e.model.name),
-                    Checkbox(
-                      value: e.isSelected,
-                      onChanged: (isSelected) => setState(
-                        () {
-                          e.isSelected = isSelected ?? false;
-                        },
-                      ),
-                    )
-                  ],
+          CheckboxListTile(
+              title: Wrap(
+                alignment: WrapAlignment.spaceBetween,
+                children: [
+                  Text(
+                    ProductTypeMapper.productTypeToString(key.model),
+                    style: const TextStyle(fontSize: 20),
+                  ),
+                ],
+              ),
+              value: value.isAllSelected,
+              onChanged: (isSelected) {
+                setState(() {
+                  key.isSelected = isSelected ?? false;
+                  value.onSelectAllTapped(isSelected ?? false);
+                });
+              }),
+          ...value.map(
+            (e) => Padding(
+              padding: const EdgeInsets.only(left: 24),
+              child: CheckboxListTile(
+                title: Text(e.model.name),
+                value: e.isSelected,
+                onChanged: (isSelected) => setState(
+                  () {
+                    e.isSelected = isSelected ?? false;
+                  },
                 ),
               ),
+            ),
           ),
           const Divider(),
         ],

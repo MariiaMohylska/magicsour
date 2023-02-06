@@ -22,11 +22,11 @@ class MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<NavigationBloc, NavigationState>(
-      bloc:  widget.navigationBloc,
+      bloc: widget.navigationBloc,
       builder: (context, state) {
-        final Map<String, List<NavigationBarItemViewModel>>
-            navigationBarItems =
+        final Map<String, List<NavigationBarItemViewModel>> navigationBarItems =
             state is NavigationSelectedState ? state.pages : {};
+
         return Container(
           color: Colors.white.withOpacity(0.2),
           child: Column(
@@ -36,13 +36,9 @@ class MainScreenState extends State<MainScreen> {
                 iconViewModel: navigationBarItems['top'],
                 onTap: onTap,
               ),
-              SizedBox(
-                  height: MediaQuery.of(context).size.height - 180,
-                  child: widget.child),
-              Expanded(
-                  child: BottomNavBar(
-                      items: navigationBarItems['bottom'] ?? [],
-                      onTap: onTap),),
+              Expanded(child: widget.child),
+              BottomNavBar(
+                  items: navigationBarItems['bottom'] ?? [], onTap: onTap),
             ],
           ),
         );
@@ -52,8 +48,7 @@ class MainScreenState extends State<MainScreen> {
 
   void onTap(int id) {
     setState(() {
-      widget.navigationBloc.add(
-          NavigationEvent.selectPage(pageId: id));
+      widget.navigationBloc.add(NavigationEvent.selectPage(pageId: id));
     });
   }
 }

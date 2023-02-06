@@ -90,8 +90,8 @@ class IngredientsListState extends State<IngredientsList> {
     return Column(
       children: [
         CheckboxListTile(
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          title: Wrap(
+            alignment: WrapAlignment.spaceBetween,
             children: [
               Text(
                 '${ingredient.model.count.toInt()} '

@@ -21,32 +21,36 @@ class HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    if(widget.homeBloc.state is RecipeLoadingState) {
+    if (widget.homeBloc.state is RecipeLoadingState) {
       widget.homeBloc.add(const RecipeEvent.fetch());
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder(
-      bloc: widget.homeBloc,
-      builder: (context, state) {
-        if (state is RecipeFetchedState) {
-          recipesList = state.recipes;
-          return ListView.builder(
-            itemBuilder: (context, id) => RecipeCardMini(
-              dish: recipesList[id],
-            ),
-            scrollDirection: Axis.vertical,
-            itemCount: recipesList.length,
-          );
-        } else {
-          return ListView.builder(
-            itemBuilder: (context, id) => const RecipeCardMiniLoading(),
-            itemCount: 10,
-          );
-        }
-      },
+    return MediaQuery.removePadding(
+      context: context,
+      removeTop: true,
+      child: BlocBuilder(
+        bloc: widget.homeBloc,
+        builder: (context, state) {
+          if (state is RecipeFetchedState) {
+            recipesList = state.recipes;
+            return ListView.builder(
+              itemBuilder: (context, id) => RecipeCardMini(
+                dish: recipesList[id],
+              ),
+              scrollDirection: Axis.vertical,
+              itemCount: recipesList.length,
+            );
+          } else {
+            return ListView.builder(
+              itemBuilder: (context, id) => const RecipeCardMiniLoading(),
+              itemCount: 10,
+            );
+          }
+        },
+      ),
     );
   }
 }
