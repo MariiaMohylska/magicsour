@@ -8,8 +8,9 @@ class FavouriteButton extends StatefulWidget {
   final String dishId;
   final AccountBloc accountBloc = BlocFactory.accountBloc;
   final FavoritesBloc favoritesBloc = BlocFactory.favoritesBloc;
+  final Color color;
 
-  FavouriteButton({required this.dishId, super.key});
+  FavouriteButton({required this.dishId, this.color = Colors.brown, super.key});
 
   @override
   State<FavouriteButton> createState() => FavouriteButtonState();
@@ -32,15 +33,15 @@ class FavouriteButtonState extends State<FavouriteButton> {
                 child: Padding(
                   padding: const EdgeInsets.only(top: 8, right: 8),
                   child: accountState.profile.favorites.contains(widget.dishId)
-                      ? const Icon(
+                      ? Icon(
                           Icons.favorite,
                           size: 48,
-                          color: Colors.brown,
+                          color: widget.color,
                         )
                       : Icon(
                           Icons.favorite_outline,
                           size: 48,
-                          color: Colors.brown.shade800.withOpacity(0.8),
+                          color: widget.color.withOpacity(0.8),
                         ),
                 ),
               ),
