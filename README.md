@@ -31,5 +31,6 @@ Magic Sour you can:
 
 ## Screenshots
 
-![App Screenshot](![common](https://user-images.githubusercontent.com/55410334/223916307-b1b0935e-bf83-494d-b11a-fa476c533764.png))
+![App screenshot](https://user-images.githubusercontent.com/55410334/223916307-b1b0935e-bf83-494d-b11a-fa476c533764.png)
+
 
